@@ -1,5 +1,5 @@
 <component name="ArtifactManager">
-  <artifact type="jar" name="testingGui:jar">
+  <artifact type="jar" build-on-make="true" name="testingGui:jar">
     <output-path>$PROJECT_DIR$/out/artifacts/testingGui_jar</output-path>
     <root id="archive" name="testingGui.jar">
       <element id="module-output" name="testingGui" />
