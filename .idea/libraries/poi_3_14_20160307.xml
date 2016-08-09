@@ -1,0 +1,14 @@
+<component name="libraryTable">
+  <library name="poi-3.14-20160307">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/Desktop/poi-3.14/poi-3.14-20160307.jar!/" />
+      <root url="jar://$USER_HOME$/Desktop/poi-3.14/poi-ooxml-3.14-20160307.jar!/" />
+      <root url="jar://$USER_HOME$/Desktop/poi-3.14/poi-ooxml-schemas-3.14-20160307.jar!/" />
+      <root url="jar://$USER_HOME$/Desktop/poi-3.14/poi-scratchpad-3.14-20160307.jar!/" />
+      <root url="jar://$USER_HOME$/Desktop/poi-3.14/ooxml-lib/curvesapi-1.03.jar!/" />
+      <root url="jar://$USER_HOME$/Desktop/poi-3.14/ooxml-lib/xmlbeans-2.6.0.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

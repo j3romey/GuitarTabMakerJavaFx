@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="872.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
+   <top>
+      <VBox prefHeight="26.0" prefWidth="600.0" BorderPane.alignment="CENTER">
+         <children>
+            <MenuBar>
+              <menus>
+                <Menu mnemonicParsing="false" text="File">
+                  <items>
+                        <MenuItem mnemonicParsing="false" text="New" />
+                        <MenuItem mnemonicParsing="false" text="Load" />
+                        <MenuItem mnemonicParsing="false" onAction="#doneButtonClicked" text="Save" />
+                    <MenuItem mnemonicParsing="false" text="Close" />
+                  </items>
+                </Menu>
+                <Menu mnemonicParsing="false" text="Edit">
+                  <items>
+                    <MenuItem mnemonicParsing="false" text="Delete" />
+                  </items>
+                </Menu>
+                <Menu mnemonicParsing="false" text="Help">
+                  <items>
+                    <MenuItem mnemonicParsing="false" text="About" />
+                  </items>
+                </Menu>
+              </menus>
+            </MenuBar>
+         </children>
+      </VBox>
+   </top>
+   <center>
+      <VBox prefHeight="375.0" prefWidth="872.0" BorderPane.alignment="CENTER">
+         <children>
+            <Pane prefHeight="48.0" prefWidth="672.0">
+               <children>
+                  <Text fontSmoothingType="LCD" layoutX="120.0" layoutY="35.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Guitar Tab Maker">
+                     <font>
+                        <Font name="Courier New" size="45.0" />
+                     </font>
+                  </Text>
+               </children>
+            </Pane>
+            <Pane prefHeight="36.0" prefWidth="672.0">
+               <children>
+                  <TextField fx:id="artistInput" layoutX="172.0" layoutY="5.0" prefHeight="25.0" prefWidth="140.0" promptText="Enter Artist Name" />
+                  <TextField fx:id="songInput" layoutX="320.0" layoutY="5.0" prefHeight="25.0" prefWidth="140.0" promptText="Enter Song Name" />
+                  <TextField fx:id="capoInput" layoutX="468.0" layoutY="5.0" prefHeight="25.0" prefWidth="75.0" promptText="Enter Capo" />
+                  <TextField fx:id="tuningInput" layoutX="554.0" layoutY="5.0" prefHeight="25.0" prefWidth="105.0" promptText="Enter Tuning" />
+                  <TextField fx:id="documentInput" layoutX="10.0" layoutY="5.0" prefHeight="25.0" prefWidth="150.0" promptText="Document Name" />
+                  <Label fx:id="docMadeVis" layoutX="705.0" layoutY="9.0" text="Document Made =D" />
+                  <Button fx:id="okButton" layoutX="820.0" layoutY="5.0" mnemonicParsing="false" onAction="#documentMade" text="Ok" />
+               </children>
+               <VBox.margin>
+                  <Insets />
+               </VBox.margin>
+               <padding>
+                  <Insets left="10.0" />
+               </padding>
+            </Pane>
+            <Pane prefHeight="36.0" prefWidth="672.0">
+               <children>
+                  <Label layoutX="11.0" layoutY="9.0" text="Current Staff: #" />
+                  <Label fx:id="curStaffVis" layoutX="93.0" layoutY="9.0" prefHeight="17.0" prefWidth="25.0" text="1" />
+                  <Button fx:id="prevStaffButton" layoutX="118.0" layoutY="5.0" mnemonicParsing="false" onAction="#prevStaffButtonClicked" text="◀" />
+                  <Button fx:id="nextStaffButton" layoutX="140.0" layoutY="5.0" mnemonicParsing="false" onAction="#nextStaffButtonClicked" text="▶" />
+                  <Label layoutX="525.0" layoutY="9.0" text="Current Space Left:" />
+                  <Label layoutX="644.0" layoutY="9.0" text="/ 61" />
+                  <Label fx:id="curSpaceVis" layoutX="628.0" layoutY="9.0" text="2" />
+               </children>
+            </Pane>
+            <HBox prefHeight="199.0" prefWidth="872.0">
+               <children>
+                  <TextArea fx:id="tabField" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="168.0" prefWidth="657.0" text="e||--&#10;B||--&#10;G||--&#10;D||--&#10;A||--&#10;E||--">
+                     <HBox.margin>
+                        <Insets bottom="2.0" left="10.0" top="2.0" />
+                     </HBox.margin>
+                     <font>
+                        <Font name="Courier New" size="16.5" />
+                     </font>
+                  </TextArea>
+                  <VBox prefHeight="191.0" prefWidth="38.0">
+                     <children>
+                        <TextField fx:id="eInput" maxWidth="-Infinity" minWidth="-Infinity" prefWidth="30.0" promptText="e">
+                           <VBox.margin>
+                              <Insets top="2.0" />
+                           </VBox.margin>
+                        </TextField>
+                        <TextField fx:id="BInput" layoutX="10.0" layoutY="12.0" maxWidth="-Infinity" minWidth="-Infinity" prefWidth="30.0" promptText="B">
+                           <VBox.margin>
+                              <Insets top="2.0" />
+                           </VBox.margin>
+                        </TextField>
+                        <TextField fx:id="GInput" layoutX="10.0" layoutY="39.0" maxWidth="-Infinity" minWidth="-Infinity" prefWidth="30.0" promptText="G">
+                           <VBox.margin>
+                              <Insets bottom="2.0" top="2.0" />
+                           </VBox.margin>
+                        </TextField>
+                        <TextField fx:id="DInput" layoutX="10.0" layoutY="70.0" maxWidth="-Infinity" minWidth="-Infinity" prefWidth="30.0" promptText="D">
+                           <VBox.margin>
+                              <Insets bottom="2.0" top="2.0" />
+                           </VBox.margin>
+                        </TextField>
+                        <TextField fx:id="AInput" layoutX="10.0" layoutY="97.0" maxWidth="-Infinity" minWidth="-Infinity" prefWidth="30.0" promptText="A">
+                           <VBox.margin>
+                              <Insets bottom="2.0" top="2.0" />
+                           </VBox.margin>
+                        </TextField>
+                        <TextField fx:id="EInput" layoutX="10.0" layoutY="122.0" maxWidth="-Infinity" minWidth="-Infinity" prefWidth="30.0" promptText="E">
+                           <VBox.margin>
+                              <Insets bottom="2.0" top="2.0" />
+                           </VBox.margin>
+                        </TextField>
+                     </children>
+                     <HBox.margin>
+                        <Insets bottom="2.0" left="2.0" right="2.0" top="2.0" />
+                     </HBox.margin>
+                  </VBox>
+                  <VBox layoutX="556.0" layoutY="12.0" prefHeight="214.0" prefWidth="142.0">
+                     <children>
+                        <HBox prefHeight="33.0" prefWidth="125.0">
+                           <children>
+                              <Button mnemonicParsing="false" onAction="#backButtonClicked" prefHeight="25.0" prefWidth="45.0" text="Back" />
+                              <Button fx:id="nextButton" mnemonicParsing="false" onAction="#nextButtonClicked" prefHeight="25.0" prefWidth="45.0" text="Next" />
+                              <Button fx:id="endButton" mnemonicParsing="false" onAction="#endButtonClicked" prefHeight="25.0" prefWidth="45.0" text="End" />
+                           </children>
+                           <VBox.margin>
+                              <Insets top="2.0" />
+                           </VBox.margin>
+                        </HBox>
+                        <HBox layoutX="10.0" layoutY="12.0" prefHeight="33.0" prefWidth="142.0">
+                           <children>
+                              <Button maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#clearButtonClicked" prefHeight="25.0" prefWidth="45.0" text="Clear" />
+                              <Button fx:id="doneButton" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#doneButtonClicked" prefHeight="25.0" prefWidth="45.0" text="Done" />
+                           </children>
+                        </HBox>
+                        <HBox prefHeight="33.0" prefWidth="142.0">
+                           <children>
+                              <Button mnemonicParsing="false" onAction="#resetStaffButtonClicked" prefHeight="25.0" prefWidth="90.0" text="Reset Staff" />
+                           </children>
+                        </HBox>
+                        <HBox prefHeight="33.0" prefWidth="125.0">
+                           <children>
+                              <Button fx:id="newStaffButton" mnemonicParsing="false" onAction="#newStaffButtonClicked" prefHeight="25.0" prefWidth="90.0" text="New Staff" />
+                           </children>
+                        </HBox>
+                        <HBox prefHeight="33.0" prefWidth="125.0">
+                           <children>
+                              <Label prefHeight="26.0" prefWidth="91.0" text="Current Spacing:" textAlignment="RIGHT" />
+                              <TextField fx:id="spacingInput" prefHeight="25.0" prefWidth="22.0" text="2" />
+                           </children>
+                        </HBox>
+                        <HBox prefHeight="55.0" prefWidth="125.0">
+                           <children>
+                              <Button mnemonicParsing="false" onAction="#resetSpacingButtonClicked" prefHeight="25.0" prefWidth="91.0" text="Reset Spacing" />
+                           </children>
+                        </HBox>
+                     </children>
+                  </VBox>
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+   </center>
+   <bottom>
+      <Pane prefHeight="27.0" prefWidth="872.0" BorderPane.alignment="CENTER">
+         <children>
+            <Label layoutX="653.0" layoutY="5.0" text="Made By: (=ﾟωﾟ)ﾉ Arnel Jerome Adviento" />
+         </children>
+      </Pane>
+   </bottom>
+</BorderPane>
